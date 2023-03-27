@@ -1,0 +1,155 @@
+{% extends 'base.html' %}
+
+{% block title %} Опрос {% endblock %}
+
+{% block content %}
+<br>
+<form class="container" action="/process">
+    <div class="row">
+        <div class="col-md-4"><i>Ваш возраст?</i></div>
+        <input type="number" name="age">
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-md-4"><i>Ваш пол?</i></div>
+        <select name="gender" class="col-md-4">
+            <option value="Male">Мужской.</option>
+            <option value="Female">Женский.</option>
+        </select>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-md-4"><i>Вы студент?</i></div>
+        <select name="education" class="col-md-4">
+            <option value="Student">Студент.</option>
+            <option value="Non-student">Уже не студент.</option>
+        </select>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-md-4"><i>Какой язык Вы изучаете / изучали на ФИКЛе?</i></div>
+        <select name="language" class="col-md-4">
+            <option value="English">Английский.</option>
+            <option value="French">Французский.</option>
+            <option value="Czech">Чешский.</option>
+            <option value="Italian">Итальянский.</option>
+            <option value="German">Немецкий.</option>
+            <option value="Chinese">Китайский.</option>
+            <option value="Finnish">Финский.</option>
+        </select>
+    </div>
+    <hr>
+    <div style="margin: 50px 10%">
+        <p><b><i><h4 style="text-align: left;"> Вопрос 1.</h4></i></b></p>
+        <p><i>Какой у выбранного Вами языка <b>базовый порядок слов</b>?</i></p><br>
+        <input class="radio" type="radio" name="q1" value="SVO"><i> SVO.</i><br>
+        <input class="radio" type="radio" name="q1" value="SOV"><i> SOV.</i><br>
+        <input class="radio" type="radio" name="q1" value="VOS"><i> VOS.</i><br>
+        <input class="radio" type="radio" name="q1" value="VSO"><i> VSO.</i><br>
+        <input class="radio" type="radio" name="q1" value="OVS"><i> OVS.</i><br>
+        <input class="radio" type="radio" name="q1" value="OSV"><i> OSV.</i><br>
+    </div>
+    <hr>
+    <div style="margin: 50px 10%">
+        <p><b><i><h4 style="text-align: left;"> Вопрос 2.</h4></i></b></p>
+        <p><i>Насколько выбранный Вами язык похож на Ваш родной с точки зрения грамматической структуры?</i></p><br>
+        <input class="radio" type="radio" name="q2" value=0><i> 0 — абсолютно не похож.</i><br>
+        <input class="radio" type="radio" name="q2" value=1><i> 1 — не похож.</i><br>
+        <input class="radio" type="radio" name="q2" value=2><i> 2 — есть существенные различия.</i><br>
+        <input class="radio" type="radio" name="q2" value=3><i> 3 — есть небольшие различия.</i><br>
+        <input class="radio" type="radio" name="q2" value=4><i> 4 — похож.</i><br>
+        <input class="radio" type="radio" name="q2" value=5><i> 5 — очень похож.</i><br>
+    </div>
+    <hr>
+    <div style="margin: 50px 10%">
+        <p><b><i><h4 style="text-align: left;"> Вопрос 3.</h4></i></b></p>
+        <p><i>Какие <b>письменные</b> особенности есть у выбранного Вами языка?</i></p><br>
+        <input type="checkbox" name="q3" value="Latin"><i> Латиница.</i><br>
+        <input type="checkbox" name="q3" value="Diacritics"><i> Диакритические знаки.</i><br>
+        <input type="checkbox" name="q3" value="Hieroglyphs"><i> Иероглифика.</i><br>
+        <input type="checkbox" name="q3" value="Consonants Clusters"><i> Встречаются длинные кластеры согласных (3 и более подряд).</i><br>
+    </div>
+    <hr>
+    <div style="margin: 50px 10%">
+        <p><b><i><h4 style="text-align: left;"> Вопрос 4.</h4></i></b></p>
+        <p><i>Насколько алфавит выбранного Вами языка сложен в изучении?</i></p><br>
+        <input class="radio" type="radio" name="q4" value=0><i> 0 — абсолютно не сложный.</i><br>
+        <input class="radio" type="radio" name="q4" value=1><i> 1 — несложный.</i><br>
+        <input class="radio" type="radio" name="q4" value=2><i> 2 — есть небольшие трудности с изучением.</i><br>
+        <input class="radio" type="radio" name="q4" value=3><i> 3 — есть существенные трудности с изучением.</i><br>
+        <input class="radio" type="radio" name="q4" value=4><i> 4 — сложный.</i><br>
+        <input class="radio" type="radio" name="q4" value=5><i> 5 — очень сложный.</i><br>
+    </div>
+    <hr>
+    <div style="margin: 50px 10%">
+        <p><b><i><h4 style="text-align: left;"> Вопрос 5.</h4></i></b></p>
+        <p><i>Какие <b>фонетические</b> особенности есть у выбранного Вами языка?</i></p><br>
+        <input type="checkbox" name="q5" value="Rhotic Vowels"><i> Ротические гласные.</i><br>
+        <input type="checkbox" name="q5" value="Approximants"><i> Аппроксиманты.</i><br>
+        <input type="checkbox" name="q5" value="Tones"><i> Тоны.</i><br>
+        <input type="checkbox" name="q5" value="Uvular Consonants"><i> Увулярные согласные.</i><br>
+        <input type="checkbox" name="q5" value="Fricatives"><i> Обилие фрикативных согласных.</i><br>
+        <input type="checkbox" name="q5" value="Non-pulmonic Consonants"><i> Непульмонические согласные (кликсы, звонкие имплозивные, эйективы / абруптивы).</i><br>
+        <input type="checkbox" name="q5" value="Affricates"><i> Аффрикаты.</i><br>
+    </div>
+    <hr>
+    <div style="margin: 50px 10%">
+        <p><b><i><h4 style="text-align: left;"> Вопрос 6.</h4></i></b></p>
+        <p><i>Мы не прескриптивисты, а поэтому знаем, что классификация языков по морфологическому признаку условна. К какой группе <b>скорее</b> относится выбранный Вами язык?</i></p><br>
+        <input class="radio" type="radio" name="q6" value="Root"><i> Корневые.</i><br>
+        <input class="radio" type="radio" name="q6" value="Agglutinate"><i> Агглютинативные.</i><br>
+        <input class="radio" type="radio" name="q6" value="Flective"><i> Флективные.</i><br>
+        <input class="radio" type="radio" name="q6" value="Polysynthetic"><i> Полисинтетические.</i><br>
+    </div>
+    <hr>
+    <div style="margin: 50px 10%">
+        <p><b><i><h4 style="text-align: left;"> Вопрос 7.</h4></i></b></p>
+        <p><i>Какой <b>alignment</b> у выбранного Вами языка?</i></p><br>
+        <input class="radio" type="radio" name="q7" value="Accusative"><i> Accusative.</i><br>
+        <input class="radio" type="radio" name="q7" value="Ergative"><i> Ergative.</i><br>
+        <input class="radio" type="radio" name="q7" value="Transitive"><i> Transitive.</i><br>
+        <input class="radio" type="radio" name="q7" value="Direct"><i> Direct.</i><br>
+        <input class="radio" type="radio" name="q7" value="Tripartite"><i> Tripartite.</i><br>
+    </div>
+    <hr>
+    <div style="margin: 50px 10%">
+        <p><b><i><h4 style="text-align: left;"> Вопрос 8.</h4></i></b></p>
+        <p><i>Насколько грамматика выбранного Вами языка сложна в изучении?</i></p><br>
+        <input class="radio" type="radio" name="q8" value=0><i> 0 — абсолютно не сложная.</i><br>
+        <input class="radio" type="radio" name="q8" value=1><i> 1 — несложная.</i><br>
+        <input class="radio" type="radio" name="q8" value=2><i> 2 — есть небольшие трудности с изучением.</i><br>
+        <input class="radio" type="radio" name="q8" value=3><i> 3 — есть существенные трудности с изучением.</i><br>
+        <input class="radio" type="radio" name="q8" value=4><i> 4 — сложная.</i><br>
+        <input class="radio" type="radio" name="q8" value=5><i> 5 — очень сложная.</i><br>
+    </div>
+    <hr>
+    <div style="margin: 50px 10%">
+        <p><b><i><h4 style="text-align: left;"> Вопрос 9.</h4></i></b></p>
+        <p><i>Сложно ли говорить на выбранном Вами языке?</i></p><br>
+        <input class="radio" type="radio" name="q9" value=0><i> 0 — абсолютно не сложно.</i><br>
+        <input class="radio" type="radio" name="q9" value=1><i> 1 — несложно.</i><br>
+        <input class="radio" type="radio" name="q9" value=2><i> 2 — есть небольшие трудности.</i><br>
+        <input class="radio" type="radio" name="q9" value=3><i> 3 — есть существенные трудности.</i><br>
+        <input class="radio" type="radio" name="q9" value=4><i> 4 — сложно.</i><br>
+        <input class="radio" type="radio" name="q9" value=5><i> 5 — очень сложно.</i><br>
+    </div>
+    <hr>
+    <div style="margin: 50px 10%">
+        <p><b><i><h4 style="text-align: left;"> Вопрос 10.</h4></i></b></p>
+        <p><i>И наспоследок, субъективный критерий. Красиво ли звучит выбранный Вами язык?</i></p><br>
+        <input class="radio" type="radio" name="q10" value=0><i> 0 — абсолютно не красиво.</i><br>
+        <input class="radio" type="radio" name="q10" value=1><i> 1 — некрасиво.</i><br>
+        <input class="radio" type="radio" name="q10" value=2><i> 2 — не очень красиво.</i><br>
+        <input class="radio" type="radio" name="q10" value=3><i> 3 — неплохо / нормально.</i><br>
+        <input class="radio" type="radio" name="q10" value=4><i> 4 — красиво.</i><br>
+        <input class="radio" type="radio" name="q10" value=5><i> 5 — очень красиво.</i><br>
+    </div>
+    <hr>
+    <div class="row">
+        <input class="submit" type="submit" style="text-align: middle;" name="submit" value="Отправить.">
+    </div>
+</form>
+<br>
+<br>
+<br>
+{% endblock %}
